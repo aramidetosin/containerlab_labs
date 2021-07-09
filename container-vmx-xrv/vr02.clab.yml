@@ -1,0 +1,13 @@
+name: vr02
+
+topology:
+  nodes:
+    csr:
+      kind: vr-csr
+      image: vrnetlab/vr-csr:17.03.02
+    xrv9k:
+      kind: vr-xrv9k
+      image: vrnetlab/vr-xrv9k:7.2.1
+
+  links:
+    - endpoints: ["csr:eth2", "xrv9k:eth2"]

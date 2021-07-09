@@ -1,0 +1,14 @@
+name: sr01
+
+topology:
+  nodes:
+    crpd:
+      kind: crpd
+      image: crpd:20.1R1.5
+    sros:
+      kind: vr-sros
+      image: henderiw/vr-sros:20.10.R3
+      type: sr-1
+
+  links:
+    - endpoints: ["crpd:eth1", "sros:eth1"]

@@ -1,0 +1,15 @@
+    line default
+ exec-timeout 0 0
+ session-timeout 0
+ cdp
+!
+interface Loopback0
+ ipv4 address 35.35.35.35 255.255.255.255
+ ipv6 address 2001:35:35:35::35/128
+!
+interface GigabitEthernet0/0/0/0
+ ipv4 address 10.34.35.35 255.255.255.0
+ ipv6 address 2001:10:34:35::35/64
+ no shut
+ cdp
+!

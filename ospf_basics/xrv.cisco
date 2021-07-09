@@ -1,0 +1,12 @@
+    line default
+ exec-timeout 0 0
+ session-timeout 0
+!
+interface Loopback0
+ ipv4 address 31.31.31.31 255.255.255.255
+ ipv6 address 2001:31:31:31::31/128
+!
+interface GigabitEthernet0/0/0/0
+ ipv4 address 100.5.31.31 255.255.255.0
+ ipv6 address 2001:100:5:31::31/64
+ no shut

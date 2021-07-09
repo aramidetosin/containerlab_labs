@@ -1,0 +1,67 @@
+{
+  "router_list": [
+    {
+      "hostname": "clab-isistopology-vr-vmx",
+      "ip": "172.20.20.5",
+      "device_type": "juniper_junos",
+      "username": "admin",
+      "password": "admin@123"
+    },
+    {
+      "hostname": "clab-isistopology-xe-r1",
+      "ip": "172.20.20.3",
+      "device_type": "cisco_ios",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "hostname": "clab-isistopology-xe-r2",
+      "ip": "172.20.20.10",
+      "device_type": "cisco_ios",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "hostname": "clab-isistopology-xe-r3",
+      "ip": "172.20.20.6",
+      "device_type": "cisco_ios",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "hostname": "clab-isistopology-xe-r4",
+      "ip": "172.20.20.9",
+      "device_type": "cisco_ios",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "hostname": "clab-isistopology-xe-r5",
+      "ip": "172.20.20.7",
+      "device_type": "cisco_ios",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "hostname": "clab-isistopology-xe-r6",
+      "ip": "172.20.20.4",
+      "device_type": "cisco_ios",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "hostname": "clab-isistopology-xe-r7",
+      "ip": "172.20.20.2",
+      "device_type": "cisco_ios",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "hostname": "clab-isistopology-xr-r1",
+      "ip": "172.20.20.8",
+      "device_type": "cisco_xr",
+      "username": "clab",
+      "password": "clab@123"
+    }
+  ]
+}

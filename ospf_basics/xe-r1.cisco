@@ -1,0 +1,13 @@
+no ip domain lookup
+interface Loopback0
+ ip address 1.1.1.1 255.255.255.255
+ ipv6 address 2001:1:1:1::1/128
+!
+interface GigabitEthernet2
+ ip address 10.1.12.1 255.255.255.0
+ negotiation auto
+ ipv6 address 2001:10:1:2::1/64
+ no mop enabled
+ no mop sysid
+line vty 0 15
+ exec-timeout 0 0

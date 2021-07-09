@@ -1,0 +1,35 @@
+no ip domain lookup
+interface Loopback0
+ ip address 5.5.5.5 255.255.255.255
+ ipv6 address 2001:5:5:5::5/128
+!
+interface GigabitEthernet2
+ ip address 10.2.5.5 255.255.255.0
+ ipv6 address 2001:10:2:5::5/64
+  cdp run
+ no shut
+!
+interface GigabitEthernet3
+ ip address 10.5.31.5 255.255.255.0
+ ipv6 address 2001:10:5:31::5/64
+  cdp run
+ no shut
+!
+line vty 0
+ exec-timeout 0 0
+ login local
+ transport input all
+line vty 1
+ exec-timeout 0 0
+ login local
+ length 0
+ transport input all
+line vty 2 4
+ exec-timeout 0 0
+ login local
+ transport input all
+line vty 5 15
+ exec-timeout 0 0
+ login
+ transport input none
+  cdp enable

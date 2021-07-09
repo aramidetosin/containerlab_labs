@@ -1,0 +1,38 @@
+name: bgp
+
+topology:
+  kinds:
+    vr-csr:
+      type: vr-csr
+      image: vrnetlab/vr-csr:17.02.01
+      publish:
+        - tcp/22/aoluwatosin10@gmail.com
+    vr-xrv9k:
+      type: vr-xrv9k
+      image: vrnetlab/vr-xrv9k:7.1.1
+      publish:
+        - tcp/22/aoluwatosin10@gmail.com
+  nodes:
+    xe-r1:
+      kind: vr-csr
+    xe-r2:
+      kind: vr-csr
+    xe-r4:
+      kind: vr-csr
+    xr-r1:
+      kind: vr-xrv9k
+    xe-r5:
+      kind: vr-csr
+
+    mysocketio:
+      kind: mysocketio
+      image: ghcr.io/hellt/mysocketctl:0.2.0
+      binds:
+        - .mysocketio_token:/root/.mysocketio_token
+
+  links:
+    - endpoints: ["xe-r1:eth1", "xe-r2:eth1"]
+    - endpoints: ["xe-r2:eth2", "xe-r4:eth1"]
+    - endpoints: ["xe-r2:eth3", "xe-r5:eth1"]
+    - endpoints: ["xe-r4:eth2", "xe-r5:eth2"]
+    - endpoints: ["xe-r5:eth3", "xr-r1:eth1"]

@@ -1,0 +1,22 @@
+no ip domain lookup
+interface Loopback0
+ ip address 5.5.5.5 255.255.255.255
+ ipv6 address 2001:5:5:5::5/128
+!
+interface GigabitEthernet2
+ ip address 10.2.25.5 255.255.255.0
+ ipv6 address 2001:10:2:25::5/64
+ no shut
+!
+interface GigabitEthernet3
+ ip address 10.4.5.5 255.255.255.0
+ ipv6 address 2001:10:4:5::5/64
+ no shut
+interface GigabitEthernet4
+ ip address 100.5.31.5 255.255.255.0
+ ipv6 address 2001:100:5:31::5/64
+ no shut
+line vty 0 15
+ exec-timeout 0 0
+ login local
+ transport input all
