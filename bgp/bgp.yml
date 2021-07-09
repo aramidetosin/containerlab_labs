@@ -12,6 +12,11 @@ topology:
       image: vrnetlab/vr-xrv9k:7.1.1
       publish:
         - tcp/22/aoluwatosin10@gmail.com
+    vr-vmx:
+      kind: vr-vmx
+      image: vrnetlab/vr-vmx:18.2R1.9
+      publish:
+        - tcp/22/aoluwatosin10@gmail.com
   nodes:
     xe-r1:
       kind: vr-csr
@@ -23,7 +28,8 @@ topology:
       kind: vr-xrv9k
     xe-r5:
       kind: vr-csr
-
+    vr-vmx-r1:
+      kind: vr-vmx
     mysocketio:
       kind: mysocketio
       image: ghcr.io/hellt/mysocketctl:0.2.0
@@ -36,3 +42,4 @@ topology:
     - endpoints: ["xe-r2:eth3", "xe-r5:eth1"]
     - endpoints: ["xe-r4:eth2", "xe-r5:eth2"]
     - endpoints: ["xe-r5:eth3", "xr-r1:eth1"]
+    - endpoints: ["xe-r5:eth4", "vr-vmx-r1:eth2"]
