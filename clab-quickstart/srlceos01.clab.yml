@@ -1,0 +1,14 @@
+# topology documentation: http://containerlab.srlinux.dev/lab-examples/srl-ceos/
+name: srlceos01
+
+topology:
+  nodes:
+    srl:
+      kind: srl
+      image: henderiw/srl:latest
+    ceos:
+      kind: ceos
+      image: 4.25.4M
+
+  links:
+    - endpoints: ["srl:e1-1", "ceos:eth1"]

@@ -1,0 +1,29 @@
+# Name is a required directive that allows containerlab to separate multiple labs running at once from each other
+name: jtechclass-containerlab-example1
+
+# The topology key here is the main aspect of the whole thing, it tells containerlab what devices to create and how to link them together
+topology:
+  # The nodes directive is that we can use to tell container lab what our nodes will be named and what images and type of nodes they are
+  nodes:
+    # This is our first node, which will use the name ceos1 and its of a type cEOS with the image referenced to ceos:4.25.4M
+    # you can see we have 2 instances of this node defined here
+    ceos1:
+      kind: ceos
+      image: ceos:4.25.4M
+    ceos2:
+      kind: ceos
+      image: ceos:4.25.4M
+    # This is how we are declaring our client nodes, basically we are telling containerlab to go to
+    # hub.docker.com and download the centos:8 image and then create it locally (we also have 2 instances of this one)
+    centos1:
+      kind: linux
+      image: centos:8
+    centos2:
+      kind: linux
+      image: centos:8
+
+  # links is right under topology, and it's what will allow us to connect our containers to each other
+  links:
+    - endpoints: ["ceos1:eth1","ceos2:eth1"]
+    - endpoints: ["ceos1:eth2","centos1:eth1"]
+    - endpoints: ["ceos2:eth2","centos2:eth1"]

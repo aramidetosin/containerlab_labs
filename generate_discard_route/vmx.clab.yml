@@ -1,0 +1,22 @@
+name: jncis
+
+topology:
+  kinds:
+    vr-vmx:
+      kind: vr-vmx
+      image: vrnetlab/vr-vmx:18.2R1.9
+
+  nodes:
+    isp_x:
+      kind: vr-vmx
+    r1:
+      kind: vr-vmx
+    r2:
+      kind: vr-vmx
+    r3:
+      kind: vr-vmx
+  links:
+    - endpoints: ["isp_x:eth1", "r1:eth1"]
+    - endpoints: ["r1:eth2", "r2:eth1"]
+    - endpoints: ["r1:eth3", "r3:eth1"]
+    - endpoints: ["r2:eth2", "r3:eth2"]
