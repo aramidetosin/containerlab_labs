@@ -4,12 +4,12 @@ topology:
   kinds:
     vr-csr:
       type: vr-csr
-      image: vrnetlab/vr-csr:17.02.01
+      image: vrnetlab/vr-csr:17.03.02
       publish:
         - tcp/22/aoluwatosin10@gmail.com
     vr-xrv9k:
       type: vr-xrv9k
-      image: vrnetlab/vr-xrv9k:7.1.1
+      image: vrnetlab/vr-xrv9k:7.2.1
       publish:
         - tcp/22/aoluwatosin10@gmail.com
     vr-vmx:
